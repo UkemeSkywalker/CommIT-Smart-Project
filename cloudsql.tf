@@ -9,7 +9,7 @@ resource "google_sql_database_instance" "commit_smart_sql" {
     tier = "db-n1-standard-1"  
 
 }
-
+}
 # Create a database in the Cloud SQL instance
 resource "google_sql_database" "commit_smart_database" {
   name     = "commit_smart-database"
