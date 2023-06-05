@@ -8,6 +8,7 @@ resource "google_compute_firewall" "gke_firewall" {
     ports    = ["80", "443"]
   }
 
-  source_tags = ["gke-${google_container_cluster.commit-smart-cluster.name}"]
-  target_tags = ["gke-${google_container_cluster.commit-smart-cluster.name}"]
+  source_tags = ["gke-${var.gke_cluster_name}"]
+  target_tags = ["gke-${var.gke_cluster_name}"]
 }
+

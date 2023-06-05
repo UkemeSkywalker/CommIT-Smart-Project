@@ -4,10 +4,6 @@ resource "google_container_cluster" "commit-smart-cluster" {
   location           = "us-east1"
   initial_node_count = 3
 
-  # Labels for the cluster
-  labels = {
-    "env" = "dev"
-  }
 }
 
 # Create the GKE node pool

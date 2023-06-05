@@ -23,4 +23,4 @@ terraform plan -out=tfplan \
 terraform apply tfplan
 
 # Clean up the Terraform plan file
-rm tfplan
+#rm tfplan
