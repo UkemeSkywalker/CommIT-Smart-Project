@@ -1,6 +1,6 @@
 # Initialize the GCP provider
 provider "google" {
-  project = "interview-project-388915"
+  project = "commit-smart"
   region  = "us-east1"
 }
 
