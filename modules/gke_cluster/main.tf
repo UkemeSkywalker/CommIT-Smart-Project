@@ -1,15 +1,26 @@
-# Initialize the GCP provider
-provider "google" {
-  project = "interview-project-388915"
-  region  = "us-east1"
+# Create the GKE cluster
+resource "google_container_cluster" "commit-smart-cluster" {
+  name               = "commit-smart"
+  location           = "us-east1"
+  initial_node_count = 3
+
+  # Labels for the cluster
+  labels = {
+    "env" = "dev"
+  }
 }
 
-# Include cluster module
-module "gke_cluster" {
-  source = "./modules/gke_cluster"
-}
+# Create the GKE node pool
+resource "google_container_node_pool" "commit-smart_node_pool" {
+  name       = "commit-smart-node-pool"
+  location   = "us-east1"
+  cluster    = google_container_cluster.commit-smart-cluster.name
+  node_count = 3
 
-# Include firewall module
-module "gke_firewall" {
-  source = "./modules/gke_firewall"
+  # Machine type and disk size configuration
+  node_config {
+    machine_type = "e2-standard-2"
+    disk_size_gb = 100
+  }
+
 }
