@@ -1,7 +1,7 @@
 # Initialize the GCP provider
 provider "google" {
-  project = "your-project-id"
-  region  = "your-preferred-region"
+  project = "interview-project-388915"
+  region  = "us-east1"
 }
 
 # Include cluster module
