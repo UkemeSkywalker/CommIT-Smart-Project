@@ -1,3 +1,4 @@
+## DevOps Assignment (Google Cloud Platform)
 I spent 2 hours working on a CommIT Smart Interview Devops Assignment. 😁
 
 Its my second time using Google Cloud Platform for a project.
